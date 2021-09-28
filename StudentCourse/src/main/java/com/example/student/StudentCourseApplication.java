@@ -1,13 +1,13 @@
-package com.example.uni;
+package com.example.student;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UniversityApiApplication {
+public class StudentCourseApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UniversityApiApplication.class, args);
+		SpringApplication.run(StudentCourseApplication.class, args);
 	}
 
 }

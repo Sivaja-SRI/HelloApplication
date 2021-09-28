@@ -1,5 +1,4 @@
-
-package com.example.uni.Controller;
+package com.example.student.Controller;
 
 import java.util.List;
 
@@ -13,38 +12,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.uni.Model.Student;
-import com.example.uni.Repo.StudentRepo;
-
+import com.example.student.Model.Course;
+import com.example.student.Repo.CourseRepo;
 
 @RestController
-@RequestMapping("/student")
-public class StudentController {
+@RequestMapping("/course")
 
-
+public class CourseController {
 	@Autowired
-	StudentRepo st;
+	CourseRepo crp;
 	@GetMapping
-	public List<Student> getAll(){
-		return st.findAll();
+	public List<Course> getAll(){
+		return crp.findAll();
 	}
 	@GetMapping("/{id}")
-	public Student get(@PathVariable("id") Integer id) {
-		return st.findById(id).get();
+	public Course get(@PathVariable("id") String id) {
+		return crp.findById(id).get();
 	}
 	@PostMapping
-	public void add(@RequestBody Student student) {
-		st.save(student);
+	public void add(@RequestBody Course course) {
+		crp.save(course);
 	}
-	
 	@PutMapping
-	public void update(@RequestBody Student student) {
-		st.save(student);
-		
+	public void update(@RequestBody Course course) {
+		crp.save(course);
 	}
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable("id") Integer id) {
-		st.deleteById(id);
+	public void delete(@PathVariable("id") String id) {
+		crp.deleteById(id);
 	}
 }
-
+	
